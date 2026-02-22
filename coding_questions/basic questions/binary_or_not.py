@@ -2,9 +2,11 @@
 # print true if N is the binary representation else print false.
 
 def is_binary(num):
-    if num <= 1:   # reject 0, 1, and negatives as per your logic
+    if num < 0:        # negative numbers invalid
         return False
-    
+    if num == 0:       # 0 is valid binary
+        return True
+
     while num:
         digit = num % 10
         if digit not in (0, 1):
@@ -13,10 +15,5 @@ def is_binary(num):
     return True
 
 
-# User input
-n = int(input("Enter a number: "))
-
-if is_binary(n):
-    print(n, "is a binary number.")
-else:
-    print(n, "is NOT a binary number.")
+N = int(input("Enter a number: "))
+print(is_binary(N))
